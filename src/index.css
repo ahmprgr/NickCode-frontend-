@@ -1,1 +1,13 @@
 @import "tailwindcss";
+body {
+  font-family: "Vazirmatn", sans-serif;
+}
+.cyber-glow {
+  box-shadow: 0 0 15px #950101;
+}
+.cyber-glow-electric {
+  box-shadow: 0 0 20px #ff0000;
+}
+.cyber-text-glow {
+  text-shadow: 0 0 8px #ff0000;
+}
