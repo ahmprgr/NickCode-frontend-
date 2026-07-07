@@ -1,5 +1,5 @@
 import Header from "../layouts/Header/Main";
-import Footer from "../layouts/Footer";
+import Footer from "../layouts/Footer/Main";
 import HeroSection from "../components/home/HeroSection/Main";
 import InfoBoxComponent from "../components/home/InfoBox/Main";
 import CourseBoxComponent from "../components/home/Courses&Searchbox/Main";
