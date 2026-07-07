@@ -1,16 +1,31 @@
-# React + Vite
+# 🌐 Nick Code - Online Programming Learning Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+یک سایت آموزش برنامه‌نویسی جامع به زبان فارسی مشابه w3schools برای یادگیری آسان و پروژه‌محور با استفاده از Node.js و Express.js در بک‌اند 
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 قابلیت‌ها
 
-## React Compiler
+- آموزش متنی قدم‌به‌قدم زبان‌ها و فریمورک‌های مختلف برنامه‌نویسی  
+- نمایش مثال‌های تعاملی و قابل ویرایش  
+- مدیریت کاربران و احراز هویت  
+- ساختار ماژولار و قابل گسترش  
+- سیستم امتیازدهی و پیشرفت کاربر
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ نصب و راه‌اندازی
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### پیش‌نیازها
+
+- Node.js نسخه 16 یا بالاتر  
+- npm یا yarn  
+- MongoDB یا دیتابیس دلخواه (در صورت نیاز)
+
+### مراحل اجرا
+
+```bash
+git clone https://github.com/ahmprgr/NickCode-frontend-.git
+cd NickCode(frontend)
+npm install
+npm run dev
