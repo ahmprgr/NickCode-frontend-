@@ -1,4 +1,4 @@
-import Header from "../layouts/Header";
+import Header from "../layouts/Header/Main";
 import Footer from "../layouts/Footer";
 import HeroSection from "../components/home/HeroSection/Main";
 import InfoBoxComponent from "../components/home/InfoBox/Main";
