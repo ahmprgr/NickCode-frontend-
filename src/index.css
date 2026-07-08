@@ -11,3 +11,16 @@ body {
 .cyber-text-glow {
   text-shadow: 0 0 8px #ff0000;
 }
+.glitch-glow {
+  text-shadow: 0 0 10px #ff0000;
+}
+.scanline {
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0) 50%,
+    rgba(0, 0, 0, 0.3) 50%,
+    rgba(0, 0, 0, 0.3)
+  );
+  background-size: 100% 4px;
+}
