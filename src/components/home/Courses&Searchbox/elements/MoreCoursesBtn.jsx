@@ -1,8 +1,10 @@
+import { Link } from "react-router-dom";
+
 export default function MoreCoursesBtn() {
   return (
     <div className={"w-full flex justify-center mt-4"}>
-      <a
-        href="courses.html"
+      <Link
+        to={"/courses"}
         className={
           "group relative px-8 py-3 bg-[#000000] border border-[#ff0000] rounded font-bold text-sm tracking-widest text-[#ff0000] uppercase transition-all duration-300 hover:bg-[#ff0000] hover:text-white hover:cyber-glow-electric"
         }
@@ -18,7 +20,7 @@ export default function MoreCoursesBtn() {
           }
         ></span>
         مشاهده همه دوره‌های آموزشی
-      </a>
+      </Link>
     </div>
   );
 }
