@@ -11,6 +11,9 @@ body {
 .cyber-text-glow {
   text-shadow: 0 0 8px #ff0000;
 }
+.cyber-glow-focus:focus-within {
+  box-shadow: 0 0 12px #950101;
+}
 .glitch-glow {
   text-shadow: 0 0 10px #ff0000;
 }
