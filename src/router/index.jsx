@@ -17,5 +17,4 @@ export const router = createBrowserRouter([
     path: "*",
     element: <NotFound />,
   },
-  { basename: "/NickCode-frontend-" },
-]);
+],  { basename: "/NickCode-frontend-" },);
