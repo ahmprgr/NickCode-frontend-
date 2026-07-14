@@ -1,4 +1,4 @@
-export default function Input() {
+export default function Main() {
   return (
     <>
       <div className={"space-y-1 group"}>
@@ -25,7 +25,7 @@ export default function Input() {
             "block text-xs font-bold text-slate-400 group-focus-within:text-[#ff0000] transition-colors"
           }
         >
-         پست الکترونیکی
+          پست الکترونیکی
         </label>
         <div className={"relative cyber-glow-focus rounded transition-all"}>
           <input
@@ -43,7 +43,7 @@ export default function Input() {
             "block text-xs font-bold text-slate-400 group-focus-within:text-[#ff0000] transition-colors"
           }
         >
-         کلمه عبور
+          کلمه عبور
         </label>
         <div className={"relative cyber-glow-focus rounded transition-all"}>
           <input
@@ -61,7 +61,7 @@ export default function Input() {
             "block text-xs font-bold text-slate-400 group-focus-within:text-[#ff0000] transition-colors"
           }
         >
-         تکرار کلمه عبور
+          تکرار کلمه عبور
         </label>
         <div className={"relative cyber-glow-focus rounded transition-all"}>
           <input
@@ -72,6 +72,31 @@ export default function Input() {
             }
           />
         </div>
+      </div>
+      <div className={"flex items-center gap-2 pt-2"}>
+        <input
+          type="checkbox"
+          id="terms"
+          className={
+            "w-4 h-4 rounded bg-[#000000] border-[#3d0000] text-[#ff0000] focus:ring-0 focus:ring-offset-0 accent-[#950101]"
+          }
+        />
+        <label
+          for="terms"
+          className={"text-xs text-slate-400 cursor-pointer select-none"}
+        >
+          قوانین و ضوابط فنی حریم خصوصی پلتفرم را می‌پذیرم.
+        </label>
+      </div>
+      <div className={"pt-4"}>
+        <button
+          type="submit"
+          className={
+            "w-full cursor-pointer bg-[#ff0000] text-white text-sm font-bold py-3.5 rounded shadow-[0_0_15px_rgba(255,0,0,0.3)] hover:bg-[#950101] transition-all duration-300 tracking-wide uppercase"
+          }
+        >
+          تکمیل ثبت نام و ایجاد حساب
+        </button>
       </div>
     </>
   );

@@ -1,5 +1,5 @@
 import Badge from "./Badge";
-import Form from "./Form/Main";
+import Form from "./Form";
 import Heading from "./Heading";
 import IsHasNoAccount from "./IsHasNoAccount";
 export default function Main() {
