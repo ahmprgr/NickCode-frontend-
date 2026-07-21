@@ -1,6 +1,33 @@
+import { useState } from "react";
+import { login } from "./../../../services/auth";
+import { notify } from "../../../utils/ToastMessage";
+import { useNavigate } from "react-router-dom";
+
 export default function Main() {
+  const navigate = useNavigate();
+  const [userInput, setUserInput] = useState({
+    email: "",
+    password: "",
+  });
+  function setUserInputHandler(e) {
+    setUserInput({ ...userInput, [e.target.name]: e.target.value });
+  }
+  async function submitHandler(e) {
+    e.preventDefault();
+    try {
+      const res = await login(userInput);
+      notify("احراز موفق", res.data.message, "success");
+      if (res.data.userObj.role === "user") {
+        navigate("/user/dashboard");
+      } else {
+        navigate("/admin/dashboard");
+      }
+    } catch (e) {
+      notify("احراز ناموفق", e.response.data.message, "error");
+    }
+  }
   return (
-    <>
+    <form className={"space-y-5"} onSubmit={submitHandler}>
       <div className={"space-y-1 group"}>
         <label
           className={
@@ -12,6 +39,9 @@ export default function Main() {
         <div className={"relative cyber-glow-focus rounded transition-all"}>
           <input
             type="email"
+            value={userInput.fullname}
+            onChange={setUserInputHandler}
+            name="email"
             placeholder="مثال: info@nickcode.ir"
             className={
               "w-full bg-[#3d0000]/10 text-white text-sm rounded p-3 pr-4 border border-[#3d0000] focus:outline-none focus:border-[#950101] text-right placeholder-slate-600"
@@ -30,6 +60,9 @@ export default function Main() {
         <div className={"relative cyber-glow-focus rounded transition-all"}>
           <input
             type="password"
+            value={userInput.fullname}
+            onChange={setUserInputHandler}
+            name="password"
             placeholder="مثال: 12345678"
             className={
               "w-full bg-[#3d0000]/10 text-white text-sm rounded p-3 pr-4 border border-[#3d0000] focus:outline-none focus:border-[#950101] text-right placeholder-slate-600"
@@ -62,6 +95,6 @@ export default function Main() {
           ورود به حساب کاربری
         </button>
       </div>
-    </>
+    </form>
   );
 }
