@@ -7,7 +7,6 @@ import { toast } from 'sonner';
  * @param {'success' | 'error' | 'warning' | 'info'} type - System alert pipeline type
  */
 export const notify = (title, description = '', type = 'info') => {
-    console.log("hello");
     
     // Define theme accents based on NickCode color profile
     const themeMap = {
