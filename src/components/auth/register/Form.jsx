@@ -1,6 +1,33 @@
+import { useState } from "react";
+import { register } from "./../../../services/auth";
+import { notify } from "./../../../utils/ToastMessage";
+import { useNavigate } from "react-router-dom";
+
 export default function Main() {
+  const navigate = useNavigate();
+  const [userInput, changeUserInput] = useState({
+    fullname: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
+  function changeUserInputHandler(e) {
+    changeUserInput({ ...userInput, [e.target.name]: e.target.value });
+  }
+
+  async function submitHandler(e) {
+    e.preventDefault();
+    try {
+      const res = await register(userInput);
+      notify("احراز موفق", res.data.message, "success");
+      navigate("/");
+    } catch (e) {
+      notify("احراز ناموفق", e.response.data.message, "error");
+    }
+  }
+
   return (
-    <>
+    <form className={"space-y-5"} onSubmit={submitHandler}>
       <div className={"space-y-1 group"}>
         <label
           className={
@@ -12,6 +39,9 @@ export default function Main() {
         <div className={"relative cyber-glow-focus rounded transition-all"}>
           <input
             type="text"
+            value={userInput.fullname}
+            onChange={changeUserInputHandler}
+            name="fullname"
             placeholder="مثال: محمد رضایی"
             className={
               "w-full bg-[#3d0000]/10 text-white text-sm rounded p-3 pr-4 border border-[#3d0000] focus:outline-none focus:border-[#950101] text-right placeholder-slate-600"
@@ -30,6 +60,9 @@ export default function Main() {
         <div className={"relative cyber-glow-focus rounded transition-all"}>
           <input
             type="email"
+            value={userInput.email}
+            onChange={changeUserInputHandler}
+            name="email"
             placeholder="مثال: info@nickcode.ir"
             className={
               "w-full bg-[#3d0000]/10 text-white text-sm rounded p-3 pr-4 border border-[#3d0000] focus:outline-none focus:border-[#950101] text-right placeholder-slate-600"
@@ -48,6 +81,9 @@ export default function Main() {
         <div className={"relative cyber-glow-focus rounded transition-all"}>
           <input
             type="password"
+            value={userInput.password}
+            onChange={changeUserInputHandler}
+            name="password"
             placeholder="مثال: 12345678"
             className={
               "w-full bg-[#3d0000]/10 text-white text-sm rounded p-3 pr-4 border border-[#3d0000] focus:outline-none focus:border-[#950101] text-right placeholder-slate-600"
@@ -66,6 +102,9 @@ export default function Main() {
         <div className={"relative cyber-glow-focus rounded transition-all"}>
           <input
             type="password"
+            value={userInput.confirmPassword}
+            onChange={changeUserInputHandler}
+            name="confirmPassword"
             placeholder="مثال: 12345678"
             className={
               "w-full bg-[#3d0000]/10 text-white text-sm rounded p-3 pr-4 border border-[#3d0000] focus:outline-none focus:border-[#950101] text-right placeholder-slate-600"
@@ -73,7 +112,7 @@ export default function Main() {
           />
         </div>
       </div>
-      <div className={"flex items-center gap-2 pt-2"}>
+      {/* <div className={"flex items-center gap-2 pt-2"}>
         <input
           type="checkbox"
           id="terms"
@@ -87,7 +126,7 @@ export default function Main() {
         >
           قوانین و ضوابط فنی حریم خصوصی پلتفرم را می‌پذیرم.
         </label>
-      </div>
+      </div> */}
       <div className={"pt-4"}>
         <button
           type="submit"
@@ -98,6 +137,6 @@ export default function Main() {
           تکمیل ثبت نام و ایجاد حساب
         </button>
       </div>
-    </>
+    </form>
   );
 }
