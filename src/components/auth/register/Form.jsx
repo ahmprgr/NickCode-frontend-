@@ -20,7 +20,11 @@ export default function Main() {
     try {
       const res = await register(userInput);
       notify("احراز موفق", res.data.message, "success");
-      navigate("/");
+      if (res.data.userObj.role === "user") {
+        navigate("/user/dashboard");
+      } else {
+        navigate("/admin/dashboard");
+      }
     } catch (e) {
       notify("احراز ناموفق", e.response.data.message, "error");
     }
