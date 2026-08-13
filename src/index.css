@@ -27,3 +27,9 @@ body {
   );
   background-size: 100% 4px;
 }
+.cyber-glow-dim {
+  box-shadow: 0 0 10px #3d0000;
+}
+.cyber-glow-crimson {
+  box-shadow: 0 0 15px #950101;
+}

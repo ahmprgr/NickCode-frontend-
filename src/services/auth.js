@@ -12,6 +12,10 @@ export function editProfile(data) {}
 
 export function delAccount(data) {}
 
-export function logout(data) {}
+export function logout(data) {
+  return as.post("/auth/logout")
+}
 
-export function getMe(data) {}
+export function getMe() {
+  return as.get("/auth/me");
+}
