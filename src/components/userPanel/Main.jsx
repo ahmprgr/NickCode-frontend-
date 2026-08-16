@@ -15,9 +15,9 @@ export default function Main() {
       try {
         const result = await getMe();
         setUser(result.data.user);
-        // if (result.data.user.role === "admin") {
-        //   navigate("/admin/dashboard");
-        // }
+        if (result.data.user.role === "admin") {
+          navigate("/admin/dashboard");
+        }
       } catch (error) {
         notify(
           "نشست شما منقضی شده است",
